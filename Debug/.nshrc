@@ -1,0 +1,54 @@
+echo  
+echo 	-----START OF INTERNAL SCRIPT!-----
+
+echo  
+echo 	      Program 5 test cases...
+echo 	-----------------------------------
+
+echo   
+alias a alias
+a a
+a s set
+a s
+a e edit
+a e
+s PATH /bin!/usr/bin!..!.~Applies to all presented examples.
+s PATH
+where run e~	Should result in: "/usr/bin/edit"
+
+echo  
+a fun adventure
+a fun
+where run s~	Should result in: "set is an internal command."
+where run a~	Should result in: "alias is an internal command."
+where run fun~	Should result in: "adventure was not found."
+
+echo  
+ ~Assuming xyzzy is my current directory in PATH and is in the parent directory.
+where dir xyzzy~Should result in: "../xyzzy."
+
+echo  
+ ~Given plugh is in parent dir w/ r, w, & x permission and I am in parent dir.
+where run plugh~	Should result in: ./plugh
+
+echo  
+ ~These need to produce the same results as they would in bash.
+alias ll {ls -al}
+ll
+ps -ef
+
+echo  
+echo 	         Variables stored:
+echo 	-----------------------------------
+echo  
+s
+
+echo  
+echo 	          Aliases stored:
+echo 	-----------------------------------
+echo  
+a
+
+echo  
+echo 	------END OF INTERNAL SCRIPT!------
+echo  

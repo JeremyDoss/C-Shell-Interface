@@ -1,0 +1,146 @@
+echo  
+echo 	-----START OF EXTERNAL SCRIPT!-----
+
+echo  
+echo 	    Program 1 & 2 test cases...
+echo 	-----------------------------------
+
+echo  
+set var var-value
+set var
+set var new-value
+set var
+
+echo  
+set var @var!new-value
+set var
+set var new-value!@var
+set var
+
+echo  
+echo Removing variable "var".
+tes var
+echo Checking for it's non-existence.
+set var
+
+echo  
+alias cmd cmd-value
+alias cmd
+alias cmd new-value
+alias cmd
+
+echo  
+echo Removing alias "cmd".
+saila cmd
+echo Checking for it's non-existence.
+alias cmd
+
+echo  
+echo 	      Program 3 test cases...
+echo 	-----------------------------------
+
+echo  
+alias al alias~    Comments are successfully Implemented!
+al a al
+a
+a s set
+s m mine
+s m
+a ll {ls -al}
+a ll
+ll foo
+a xyz {set foo}
+a xyz
+xyz 1234!otherstuff
+xyz
+set ank1 {My little string.}
+s ank1
+s ank2 {# foobaz}
+s ank2
+s ank2 @ank2!@ank1
+s ank2~	Should produce "ank2: # foobaz!My little string."
+
+echo  
+echo 	      Program 4 test cases...
+echo 	-----------------------------------
+
+echo  
+alias a alias
+a a
+a s set
+a s
+alias fee $~	{fi fo fum} is on next line in script file.
+{fi fo fum}
+a fee
+echo This is a line of text. La Di Da. It is an extremely long line of text. $
+It seems to go on and on.
+s xxx Plugh?s var {my booty.}?s dont @xxx!@var
+s xxx?s var?s dont
+
+a e echo
+
+e  
+e Don't do what is listed below:?e @dont
+
+e  
+e Setting XYZ?set XYZ blast?set XYZ
+
+e  
+set 4 four
+s 4
+set 6 six
+s 6
+set op {multiplied by}
+s op
+set math @4!@op!@6
+s math
+set math @math!{equals 24!}
+s math
+
+e  
+e 	      Program 5 test cases...
+e 	-----------------------------------
+
+e   
+s PATH /bin!/usr/bin!..!.~Applies to all presented examples.
+s PATH
+a e edit
+a e
+where run e~	Should result in: "/usr/bin/edit"
+
+echo  
+a fun adventure
+a fun
+where run s~	Should result in: "set is an internal command."
+where run a~	Should result in: "alias is an internal command."
+where run fun~	Should result in: "adventure was not found."
+
+echo  
+ ~Assuming xyzzy is my current directory in PATH and is in the parent directory.
+where dir xyzzy~Should result in: "../xyzzy."
+
+echo  
+ ~Given plugh is in parent dir w/ r, w, & x permission and I am in parent dir.
+where run plugh~	Should result in: ./plugh
+
+echo  
+ ~These need to produce the same results as they would in bash.
+alias ll {ls -al}
+ll
+ps -ef
+
+echo  
+echo 	         Variables stored:
+echo 	-----------------------------------
+echo  
+s
+
+echo  
+echo 	          Aliases stored:
+echo 	-----------------------------------
+echo  
+a
+
+echo  
+echo 	------END OF EXTERNAL SCRIPT!------
+echo  
